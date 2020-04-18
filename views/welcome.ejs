@@ -1,0 +1,48 @@
+<div class=" text-center row mt-5 ">
+
+
+
+
+
+
+</div>
+<div class="row mt-5 ">
+    <div class="col-md-6 mr-5 m-auto">
+        <h1 style="text-align: center; font-size:25px;">USD to INR CONVERTER</h1>
+        <div class="card card-body text-center">
+
+            <div class="form">
+                <form>
+                    <div class="form-group">
+                        <label for="inputUSD" style="font-size: 23px;">Enter Amount in USD </label>
+                        <input type="text" id="usd" class="form-control" placeholder="USD"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    </div>
+                    <div class="result">
+                        <h1 id="inr"></h1>
+                    </div>
+                    <input type="button" class="btn btn-primary btn-block " onclick="convert()" value="Convert to INR">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function convert() {
+        var USD = parseInt(document.getElementById("usd").value);
+        var INR = USD * 76.50;
+        document.getElementById("inr").innerHTML = INR.toFixed(2);
+    }
+</script>
+
+<div class="row         mt-5">
+    <div class="col-md-6 mr-5 m-auto">
+        <div class="card card-body text-center">
+
+            <p>Create an Account or Login?</p>
+            <a href="/users/register" class="btn btn-primary btn-block mb-2">Register</a>
+            <a href="/users/login" class="btn btn-secondary btn-block">Login</a>
+        </div>
+    </div>
+</div>
