@@ -1,6 +1,6 @@
 # Login-Page-Node.js 
 
-Visit : https://usd-to-inr-converter.herokuapp.com/ 
+Visit : https://usd-to-inr-convert.herokuapp.com/ 
 
 This is a user login and registration app created using Node.js, Express, Passport, Mongoose, EJS and some other packages.
 
