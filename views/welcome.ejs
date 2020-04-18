@@ -14,7 +14,17 @@
             <div class="form">
                 <form>
                     <div class="form-group">
-                        <label for="inputUSD" style="font-size: 23px;">Enter Amount in USD </label>
+                        <p id="demo" style="  font-size: 23px;"></p>
+
+                        <script>async function convertt() {
+                                const response = await fetch('https://free.currconv.com/api/v7/convert?q=USD_INR&compact=ultra&apiKey=57501b58ea8740032ce1');
+                                const data = await response.json();
+                                var INR = data.USD_INR;
+                                var ok = INR.toFixed(2);
+                                document.getElementById("demo").innerHTML = 'Current Rate is ' + ok + ' INR';
+                            }
+                            convertt();</script>
+
                         <input type="text" id="usd" class="form-control" placeholder="USD"
                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
@@ -29,11 +39,14 @@
 </div>
 
 <script>
-    function convert() {
+    async function convert() {
         var USD = parseInt(document.getElementById("usd").value);
-        var INR = USD * 76.50;
-        document.getElementById("inr").innerHTML = INR.toFixed(2);
+        const response = await fetch('https://free.currconv.com/api/v7/convert?q=USD_INR&compact=ultra&apiKey=57501b58ea8740032ce1');
+        const data = await response.json();
+        var INR = USD * data.USD_INR;
+        document.getElementById("inr").innerHTML = INR.toFixed(2) + ' INR';
     }
+
 </script>
 
 <div class="row         mt-5">
